@@ -33,7 +33,7 @@ const App: React.FC = () => {
         <Route path="/sessions" element={<SessionsPage isLightOn={isLightOn} />} />
         <Route path="/contact" element={<Contact isLightOn={isLightOn} />} />
 
- 
+
       </Routes>
     </div>
   );

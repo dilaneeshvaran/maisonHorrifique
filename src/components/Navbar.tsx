@@ -40,10 +40,9 @@ const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
     <nav>
       <div className='nav-container'>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/sessions">Sessions</Link></li>
-          <li><Link to="/contact">Contact</Link></li>  
-
+          <li><Link to="/">Réception</Link></li>
+          <li><Link to="/sessions">Réservation</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
       <div className='switch-container'>

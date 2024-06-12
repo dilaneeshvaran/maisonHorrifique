@@ -67,7 +67,7 @@ function SessionsPage({ isLightOn }: Props) {
   const fetchSessionsData = async () => {
     return [
       { id: 1, title: 'Chambre de Valak', description: 'Say my name', image: escape_room_1 },
-      { id: 2, title: 'Chambre Vampire', description: 'Will you manage to escape from the psycho vampire? ', image: escape_room_2 },
+      { id: 2, title: 'Psycho Vampire', description: 'Will you manage to escape from the psycho vampire? ', image: escape_room_2 },
       { id: 3, title: 'Chambre n°13', description: 'Visit this room at your own risk !', image: escape_room_3 },
     ];
   };
@@ -76,7 +76,7 @@ function SessionsPage({ isLightOn }: Props) {
     <div className={`home-container ${isLightOn ? 'light-on' : 'light-off'}`}>
       <div className="sessions-page">
         <main>
-          <h1>All Sessions</h1>
+          <h1>Chambres</h1>
           <div className="sessions-container">
             {sessions.map(session => (
               <Session

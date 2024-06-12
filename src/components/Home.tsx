@@ -21,6 +21,7 @@ const Home: React.FC<Props> = ({ isLightOn }) => {
           <article>
             <p>Que vous soyez amateurs d'aventure, passionnés d'horreur, en groupe d'amis ou une entreprise en quête d'activités de team building originales, nous avons ce qu'il vous faut.</p>
           </article>
+          <br></br>
           <article>
             <h2>Nos Points Forts</h2>
             <ul>

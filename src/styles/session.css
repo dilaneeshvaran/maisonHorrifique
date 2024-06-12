@@ -9,7 +9,6 @@
   .sessions-container .session {
     background-color: #333;
     border: 1px solid #fff;
-    padding: 20px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     transition: transform 0.3s ease;
   }

@@ -106,7 +106,8 @@ const Reservation: React.FC<ReservationProps> = ({ session, onClose }) => {
         <Input type="text" placeholder="Your Name" required />
         <Input type="email" placeholder="Your Email" required />
         <Input type="date" placeholder="Reservation Date" required />
-        <Button type="submit">Open the Door</Button>
+        <Input type="time" placeholder="Reservation Time" required />
+        <Button type="submit">Reserve</Button>
       </Form>
       {
         isDialogOpen && (

@@ -1,19 +1,25 @@
- 
+.page-container {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .contact-container {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- 
+  background-color: #222;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .contact-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  color: #ff0000;
+  text-shadow: 2px 2px #000;
 }
 
 .contact-container form {
@@ -22,31 +28,55 @@ grid-template-columns: repeat(3, 1fr);
 }
 
 .contact-container label {
+  color: #fff;
   margin-bottom: 10px;
-  font-weight: bold;
 }
 
-.contact-container input,
-.contact-container textarea {
+.contact-container input, .contact-container textarea {
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid var(--border-color);
   border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
+  border: 1px solid #fff;
+  background-color: #333;
+  color: #fff;
 }
 
 .contact-container button {
-  padding: 10px;
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  background-color: #ff0000;
+  color: #fff;
   cursor: pointer;
-  align-self: center;
-  width: 100px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .contact-container button:hover {
-  background-color: var(--button-bg-hover-color);
+  background-color: #aa0000;
+}
+
+.haunted-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  color: #fff;
+  padding: 2rem;
+  border: 1px solid #fff;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  10% { transform: translate(-50%, -50%) rotate(-10deg); }
+  20% { transform: translate(-50%, -50%) rotate(10deg); }
+  30% { transform: translate(-50%, -50%) rotate(-10deg); }
+  40% { transform: translate(-50%, -50%) rotate(10deg); }
+  50% { transform: translate(-50%, -50%) rotate(-10deg); }
+  60% { transform: translate(-50%, -50%) rotate(10deg); }
+  70% { transform: translate(-50%, -50%) rotate(-10deg); }
+  80% { transform: translate(-50%, -50%) rotate(10deg); }
+  90% { transform: translate(-50%, -50%) rotate(-10deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
