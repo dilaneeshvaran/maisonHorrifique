@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import SessionsPage from './components/SessionsPage';
+import Contact from './components/Contact';
 
 import './App.css';
 
@@ -30,6 +31,9 @@ const App: React.FC = () => {
           element={<Home isLightOn={isLightOn} />}
         />
         <Route path="/sessions" element={<SessionsPage isLightOn={isLightOn} />} />
+        <Route path="/contact" element={<Contact isLightOn={isLightOn} />} />
+
+ 
       </Routes>
     </div>
   );
