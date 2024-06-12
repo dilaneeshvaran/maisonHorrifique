@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import SessionsPage from './components/SessionsPage';
+
 import './App.css';
 
 const App: React.FC = () => {
@@ -21,16 +22,16 @@ const App: React.FC = () => {
   }, [isLightOn]);
 
   return (
-      <div className={`app-container ${isLightOn ? 'light-on' : 'light-off'}`}>
-        <Navbar isLightOn={isLightOn} handleLightSwitch={handleLightSwitch} />
-        <Routes>
+    <div className={`app-container ${isLightOn ? 'light-on' : 'light-off'}`}>
+      <Navbar isLightOn={isLightOn} handleLightSwitch={handleLightSwitch} />
+      <Routes>
         <Route
-            path="/"
-            element={<Home isLightOn={isLightOn} />}
-          />
-        <Route path="/sessions" element={<SessionsPage isLightOn={isLightOn}/>} />
-        </Routes>
-      </div>
+          path="/"
+          element={<Home isLightOn={isLightOn} />}
+        />
+        <Route path="/sessions" element={<SessionsPage isLightOn={isLightOn} />} />
+      </Routes>
+    </div>
   );
 }
 

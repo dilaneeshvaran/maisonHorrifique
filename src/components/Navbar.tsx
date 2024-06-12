@@ -14,7 +14,7 @@ const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
     const update = (e: MouseEvent | TouchEvent) => {
       const x = (e as MouseEvent).clientX || (e as TouchEvent).touches[0].clientX;
       const y = (e as MouseEvent).clientY || (e as TouchEvent).touches[0].clientY;
-      
+
       document.documentElement.style.setProperty('--cursorX', `${x}px`);
       document.documentElement.style.setProperty('--cursorY', `${y}px`);
     };
@@ -38,10 +38,12 @@ const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
 
   return (
     <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/sessions">Sessions</Link></li>
-      </ul>
+      <div className='nav-container'>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/sessions">Sessions</Link></li>
+        </ul>
+      </div>
       <div className='switch-container'>
         <input type="checkbox" id="light-switch" onChange={handleLightSwitch} checked={isLightOn} />
         <label htmlFor="light-switch" id="light-switch-label">

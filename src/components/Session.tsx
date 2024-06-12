@@ -4,11 +4,12 @@ interface SessionProps {
   title: string;
   description: string;
   image: string;
+  onClick: () => void;
 }
 
-function Session({ title, description, image }: SessionProps) {
+function Session({ title, description, image, onClick }: SessionProps) {
   return (
-    <div className="session">
+    <div className="session" onClick={onClick}>
       <img src={image} alt={title} className="session-image" />
       <div className="session-details">
         <h2 className="session-title">{title}</h2>
