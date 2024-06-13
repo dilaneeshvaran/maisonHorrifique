@@ -4,6 +4,7 @@ import '../styles/navbar.css'
 import '../styles/switch.css';
 import '../styles/home.css';
 
+
 interface Props {
   isLightOn: boolean;
   handleLightSwitch: () => void;
@@ -53,6 +54,7 @@ const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
           <div className="screw"></div>
         </label>
       </div>
+
     </nav>
   );
 }

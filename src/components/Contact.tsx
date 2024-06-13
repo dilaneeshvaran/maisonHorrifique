@@ -26,18 +26,15 @@ const Contact: React.FC<Props> = ({ isLightOn }) => {
       <div className="contact-container">
         <h2>Contactez la maison</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
+          <label>Name:
+            <input type="text" name="name" required />
+          </label>
+          <label>Email:
+            <input type="email" name="email" required />
+          </label>
+          <label>Message:
+            <textarea name="message" required></textarea>
+          </label>
           <button type="submit">Submit</button>
         </form>
         {isDialogVisible && (
@@ -50,4 +47,5 @@ const Contact: React.FC<Props> = ({ isLightOn }) => {
     </div>
   );
 };
+
 export default Contact;
