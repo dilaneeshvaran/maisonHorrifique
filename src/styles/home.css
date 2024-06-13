@@ -19,8 +19,9 @@
     );
     z-index: 9999;
   }
+  
   body {
-    background-color: #232323;
+    background-color: #121212;
     color: #fff;
     font-family: 'Creepster', cursive;
     margin: 0;

@@ -4,6 +4,7 @@ import '../styles/navbar.css'
 import '../styles/switch.css';
 import '../styles/home.css';
 import Footer from './Footer';
+import SmokeEffect from './SmokeEffect';
 
 interface Props {
   isLightOn: boolean;

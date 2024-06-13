@@ -32,7 +32,7 @@ const Home: React.FC<Props> = ({ isLightOn }) => {
           </article>
         </section>
       </main>
-      <footer>Footer content</footer>
+
     </div>
   );
 }
