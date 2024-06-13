@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/navbar.css'
 import '../styles/switch.css';
 import '../styles/home.css';
-
+import Footer from './Footer';
 
 interface Props {
   isLightOn: boolean;
@@ -54,7 +54,9 @@ const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
           <div className="screw"></div>
         </label>
       </div>
-
+      <div>
+        <Footer />
+      </div>
     </nav>
   );
 }
