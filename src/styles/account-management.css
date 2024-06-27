@@ -1,0 +1,96 @@
+.account-management-container {
+    padding: 20px;
+}
+
+.account-management-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.account-management-container button {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.account-management-container button:hover {
+    background-color: #666;
+}
+
+.modal-acc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #1c1c1c;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #444;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.close-acc {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-acc:hover,
+.close-acc:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-acc label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.form-acc input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+.form-acc input::placeholder {
+    color: #aaa;
+}
+
+.form-acc button {
+    width: 100%;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-acc button:hover {
+    background-color: #666;
+}

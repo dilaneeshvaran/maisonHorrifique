@@ -1,0 +1,36 @@
+.management-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #1c1c1c;
+    border: 2px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.management-nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.nav-button.active,
+.nav-button:hover {
+    background-color: #666;
+}
+
+.management-content {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+}

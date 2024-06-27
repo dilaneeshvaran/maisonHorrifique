@@ -4,14 +4,17 @@ import '../styles/navbar.css'
 import '../styles/switch.css';
 import '../styles/home.css';
 import Footer from './Footer';
-import SmokeEffect from './SmokeEffect';
+import { RiShutDownLine } from "react-icons/ri";
+import { TfiKey } from "react-icons/tfi";
+
 
 interface Props {
   isLightOn: boolean;
   handleLightSwitch: () => void;
+  isUserLoggedIn: boolean;
 }
 
-const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
+const Navbar: React.FC<Props> = ({ isUserLoggedIn, isLightOn, handleLightSwitch }) => {
   useEffect(() => {
     const update = (e: MouseEvent | TouchEvent) => {
       const x = (e as MouseEvent).clientX || (e as TouchEvent).touches[0].clientX;
@@ -38,6 +41,8 @@ const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
     }
   }, [isLightOn]);
 
+  const loginRedirect = isUserLoggedIn ? '/management' : '/login';
+
   return (
     <nav>
       <div className='nav-container'>
@@ -45,6 +50,7 @@ const Navbar: React.FC<Props> = ({ isLightOn, handleLightSwitch }) => {
           <li><Link to="/">Réception</Link></li>
           <li><Link to="/sessions">Réservation</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <li><Link to={loginRedirect}><TfiKey className='login-btn' /></Link></li>
         </ul>
       </div>
       <div className='switch-container'>
