@@ -14,7 +14,7 @@ const Footer = () => (
         </div>
 
         <div className='social-media'>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://github.com/dilaneeshvaran/maisonHorrifique" target="_blank" rel="noreferrer">
                 <img src={instagramLogo} alt="Instagram" />
             </a>
         </div>
