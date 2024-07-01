@@ -50,7 +50,7 @@ const Navbar: React.FC<Props> = ({ isUserLoggedIn, isLightOn, handleLightSwitch 
           <li><Link to="/">Réception</Link></li>
           <li><Link to="/sessions">Réservation</Link></li>
           <li><Link to="/contact">Contact</Link></li>
-          <li><Link to={loginRedirect}><TfiKey className='login-btn' /></Link></li>
+          <li><Link to={loginRedirect}><TfiKey className='login-btn' style={{ color: isUserLoggedIn ? 'red' : 'inherit' }} /></Link></li>
         </ul>
       </div>
       <div className='switch-container'>
