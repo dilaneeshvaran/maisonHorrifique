@@ -10,7 +10,7 @@ const Footer = () => (
         <p>© 1800 Maison Horifique. All rights reserved.</p>
 
         <div className='mentions-legales'>
-            <Link to="/mentions-legales">Mentions Légales</Link>
+            <Link className='ml' to="/mentions-legales">Mentions Légales</Link>
         </div>
 
         <div className='social-media'>

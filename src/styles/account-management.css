@@ -24,6 +24,7 @@
     background-color: #666;
 }
 
+
 .modal-acc {
     display: flex;
     align-items: center;
@@ -39,7 +40,7 @@
 }
 
 .modal-content {
-    background-color: #1c1c1c;
+    background-color: var (--modal-content);
     margin: auto;
     padding: 20px;
     border: 1px solid #444;

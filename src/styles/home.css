@@ -21,8 +21,8 @@
   }
   
   body {
-    background-color: #121212;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: 'Creepster', cursive;
     margin: 0;
     height: 100vh;

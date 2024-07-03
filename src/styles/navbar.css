@@ -1,5 +1,5 @@
 nav {
-    background-color: #282c34;
+    background-color: var(--nav-cont);
     padding: 1rem;
     
   }
@@ -13,7 +13,7 @@ nav {
   }
   
   nav ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
   }
   
@@ -30,3 +30,14 @@ nav {
     height: 2rem;
     width: 2rem;
   }
+
+  .theme-btn{
+    height: 3rem;
+    width: 3rem;
+}
+
+.theme-container{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}

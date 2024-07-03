@@ -49,14 +49,14 @@ html, body {
   width: 66.67px;
   z-index: 1;
   margin: 33.33px auto 0 auto;
-  background-color: #4e4e4e; /* dark gray */
+  background-color: #4e4e4e; 
   border-radius: 3.33px;
   border: 2px solid #2e2e2e;
   .switch {
       cursor: pointer;
       height: 50px;
       width: 33.33px;
-      background: #383838; /* dark background */
+      background: #383838;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -74,8 +74,8 @@ html, body {
           width: 33.33px;
           top: 1.67px;
           left: 0;
-          background: #6b6b6b; /* dark gray */
-          color: #ff0000; /* red text */
+          background: #6b6b6b; 
+          color: #ff0000; 
           border-radius: 1.67px 1.67px 0 0;
       }
       &:after {
@@ -88,7 +88,7 @@ html, body {
           width: 33.33px;
           bottom: 0;
           left: 0;
-          background: #4e4e4e; /* dark gray */
+          background: #4e4e4e;
           color: #a4441a;
           text-shadow: 0 0 1px #ff4e00;
           border-radius: 0 0 1.67px 1.67px;
@@ -128,3 +128,4 @@ html, body {
   bottom: 20px;
   right: 20px;
 }
+

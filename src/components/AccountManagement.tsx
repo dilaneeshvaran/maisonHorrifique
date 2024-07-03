@@ -61,7 +61,7 @@ const AccountManagement: React.FC = () => {
                 <div className="modal-acc">
                     <div className="modal-content">
                         <span className="close-acc" onClick={() => setIsModalOpen(false)}>&times;</span>
-                        <h2>Modifier Mes Infos</h2>
+                        <h2 className='acc-h2'>Modifier Mes Infos</h2>
                         <form className='form-acc' onSubmit={handleSave}>
                             <label htmlFor="email">Email:</label>
                             <input type="email" id="email" name="email" value={accountInfo.email || ''} onChange={handleChange} required />

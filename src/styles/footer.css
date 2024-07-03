@@ -1,7 +1,7 @@
 .haunted-footer {
     font-size: 10px;
     display: flex;
-    color: #fff;
+    color: var(--text-color);;
     text-align: center;
     position: fixed;
     align-items: center;
@@ -43,4 +43,8 @@
 
   .mentions-legales{
     font-size: 10px;
+  }
+
+  .ml{
+    color: var(--text-color);
   }

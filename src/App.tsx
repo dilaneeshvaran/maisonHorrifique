@@ -15,19 +15,25 @@ const App: React.FC = () => {
   const [isLightOn, setIsLightOn] = useState(false);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const navigate = useNavigate();
-  
+
   const handleLightSwitch = () => {
     setIsLightOn(prevState => !prevState);
   };
 
-  const handleUserLogin=() =>{
-    setIsUserLoggedIn(prevState=>!prevState);
+  const handleUserLogin = () => {
+    setIsUserLoggedIn(prevState => !prevState);
   }
 
-  const handleLogout=()=>{
+  const handleLogout = () => {
     setIsUserLoggedIn(false);
     navigate('/login');
   }
+
+  const toggleTheme = () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
 
 
   useEffect(() => {
@@ -40,7 +46,7 @@ const App: React.FC = () => {
 
   return (
     <div className={`app-container ${isLightOn ? 'light-on' : 'light-off'}`}>
-      <Navbar isUserLoggedIn={isUserLoggedIn} isLightOn={isLightOn} handleLightSwitch={handleLightSwitch} />
+      <Navbar isUserLoggedIn={isUserLoggedIn} isLightOn={isLightOn} toggleTheme={toggleTheme} handleLightSwitch={handleLightSwitch} />
       <Routes>
         <Route
           path="/"
@@ -49,9 +55,9 @@ const App: React.FC = () => {
         <Route path="/sessions" element={<SessionsPage isLightOn={isLightOn} />} />
         <Route path="/contact" element={<Contact isLightOn={isLightOn} />} />
         <Route path="/login" element={<Login handleUserLogin={handleUserLogin} isLightOn={isLightOn} />} />
-        <Route path="/session-management" element={<SessionManagement/>} />
-        <Route path="/account-management" element={<AccountManagement/>} />
-        <Route path="/management" element={<Management handleLogout={handleLogout}/>} />
+        <Route path="/session-management" element={<SessionManagement />} />
+        <Route path="/account-management" element={<AccountManagement />} />
+        <Route path="/management" element={<Management handleLogout={handleLogout} />} />
       </Routes>
     </div>
   );

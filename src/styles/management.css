@@ -1,7 +1,7 @@
 .management-container {
     width: 80%;
     margin: 50px auto;
-    background-color: #1c1c1c;
+    background-color: var(--manage-container-bg);
     border: 2px solid #444;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -31,6 +31,6 @@
 
 .management-content {
     padding: 20px;
-    background-color: #222;
+    background-color: var(--manage-container-content);
     border-radius: 8px;
 }
