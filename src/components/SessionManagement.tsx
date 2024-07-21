@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/session-management.css';
 import { FaPlus } from "react-icons/fa";
+import ScheduleManagement from './ScheduleManagement';
 
 interface Session {
     title: string;
@@ -19,6 +20,8 @@ const SessionManagement: React.FC = () => {
     const [selectedSession, setSelectedSession] = useState<Session | null>(null);
     const [isEditing, setIsEditing] = useState(false);
     const [previewImage, setPreviewImage] = useState<string | null>(null);
+    const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
+    const [sessionToDelete, setSessionToDelete] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -52,16 +55,17 @@ const SessionManagement: React.FC = () => {
 
     const handleEditSession = (session: Session) => {
         setSelectedSession(null);
-
         setNewSession(session);
         setIsModalOpen(true);
         setIsEditing(true);
         setPreviewImage(session.image || null);
     };
 
-    const handleDeleteSession = (title: string) => {
-        setSessions(sessions.filter(session => session.title !== title));
-        setSelectedSession(null);
+    const handleDeleteSession = (title: string | null) => {
+        if (title) {
+            setSessions(sessions.filter(session => session.title !== title));
+            setSelectedSession(null);
+        }
     };
 
     const openSessionDetails = (session: Session) => {
@@ -77,7 +81,9 @@ const SessionManagement: React.FC = () => {
             <div className='main-session-container'>
                 <div className='session-header'>
                     <FaPlus className='create-session-btn' onClick={() => { setIsModalOpen(true); setIsEditing(false); setNewSession({}); setPreviewImage(null); }} />
-                </div><h2 className='h2-s'>Sessions</h2>
+                    <h2 className='h2-s'>Sessions</h2>
+                    <div className='schedule-calendar'><ScheduleManagement /></div>
+                </div>
                 <div className="s-management-container">
                     <div id="sessionList" className="session-list">
                         {sessions.map((session) => (
@@ -87,7 +93,6 @@ const SessionManagement: React.FC = () => {
                             </div>
                         ))}
                     </div>
-
                     {isModalOpen && (
                         <div id="sessionModal" className="modal">
                             <div className="modal-content">
@@ -126,12 +131,28 @@ const SessionManagement: React.FC = () => {
                                 <p>Capacité Max: {selectedSession.capacity}</p>
                                 <p>Prix: ${selectedSession.price}</p>
                                 <p>Créneau: {selectedSession.schedules}</p>
-                                <button className='session-dlt' onClick={() => handleDeleteSession(selectedSession.title)}>Détruire</button>
+                                <button className='session-dlt' onClick={() => {
+                                    setSessionToDelete(selectedSession.title);
+                                    setIsConfirmDialogOpen(true);
+                                }}>Détruire</button>
                                 <button className='session-edit' onClick={() => handleEditSession(selectedSession)}>Modifier</button>
                             </div>
                         </div>
                     )}
                 </div>
+
+                {isConfirmDialogOpen && (
+                    <div className="modal">
+                        <div className="modal-content">
+                            <p>Etes vous sur de détruire le room ?</p>
+                            <button onClick={() => {
+                                handleDeleteSession(sessionToDelete);
+                                setIsConfirmDialogOpen(false);
+                            }}>Oui</button>
+                            <button onClick={() => setIsConfirmDialogOpen(false)}>Non</button>
+                        </div>
+                    </div>
+                )}
             </div>
         </>
     );
