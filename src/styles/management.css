@@ -1,11 +1,12 @@
 .management-container {
     width: 80%;
-    margin: 50px auto;
+    margin: 20px auto;
     background-color: var(--manage-container-bg);
     border: 2px solid #444;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 20px;
+    max-height: 29rem;
 }
 
 .management-nav {
