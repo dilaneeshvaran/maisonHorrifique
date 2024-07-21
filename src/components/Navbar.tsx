@@ -8,7 +8,6 @@ import { RiShutDownLine } from "react-icons/ri";
 import { TfiKey } from "react-icons/tfi";
 import { RiCandleFill } from "react-icons/ri";
 
-
 interface Props {
   isLightOn: boolean;
   handleLightSwitch: () => void;
@@ -55,7 +54,6 @@ const Navbar: React.FC<Props> = ({ toggleTheme, isUserLoggedIn, isLightOn, handl
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to={loginRedirect}><TfiKey className='login-btn' style={{ color: isUserLoggedIn ? 'red' : 'inherit' }} /></Link></li>
             <div className='theme-container'><RiCandleFill className='theme-btn' onClick={toggleTheme} /></div>
-
           </ul>
         </div>
         <div className='switch-container'>
@@ -66,14 +64,8 @@ const Navbar: React.FC<Props> = ({ toggleTheme, isUserLoggedIn, isLightOn, handl
             <div className="screw"></div>
           </label>
         </div>
-
-
-
-
         <div>
-
           <Footer />
-
         </div>
       </nav >
     </>
