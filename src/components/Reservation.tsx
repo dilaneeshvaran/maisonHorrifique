@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import Session from './Session';
-
+import axios from 'axios';
 interface SessionData {
   id: number;
   title: string;
@@ -89,9 +89,28 @@ const Reservation: React.FC<ReservationProps> = ({ session, onClose }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent) => {
+ 
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsDialogOpen(true);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const reservation = {
+      sessionId: session.id,
+      name: formData.get('name'),
+      email: formData.get('email'),
+      date: formData.get('date'),
+      time: formData.get('time')
+    };
+
+    try {
+      const response = await axios.post('http://localhost:5050/reservations', reservation);
+      console.log('Reservation added:', response.data);
+      setIsDialogOpen(true);
+    } catch (error) {
+      console.error('There was an error adding the reservation!', error);
+
+    }
   };
 
   if (!isOpen) {
@@ -103,10 +122,10 @@ const Reservation: React.FC<ReservationProps> = ({ session, onClose }) => {
       <Form onSubmit={handleSubmit}>
         <CloseButton onClick={onClose}>X</CloseButton>
         <h1>Reserve {session.title}</h1>
-        <Input type="text" placeholder="Your Name" required />
-        <Input type="email" placeholder="Your Email" required />
-        <Input type="date" placeholder="Reservation Date" required />
-        <Input type="time" placeholder="Reservation Time" required />
+        <Input name="name" type="text" placeholder="Your Name" required />
+        <Input name="email" type="email" placeholder="Your Email" required />
+        <Input name="date" type="date" placeholder="Reservation Date" required />
+        <Input name="time" type="time" placeholder="Reservation Time" required />
         <Button type="submit">Reserve</Button>
       </Form>
       {

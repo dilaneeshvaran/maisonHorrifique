@@ -1,24 +1,42 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/login.css';
 
 interface Props {
     isLightOn: boolean;
-    handleUserLogin:() => void;
+    handleUserLogin: () => void;
 }
 
-const Login: React.FC<Props> = ({handleUserLogin, isLightOn }) => {
+const Login: React.FC<Props> = ({ handleUserLogin, isLightOn }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (event: React.FormEvent) => {
+    const handleLogin = async (event: React.FormEvent) => {
         event.preventDefault();
-        handleUserLogin()
-        if (username === 'a' && password === 'a') {
-            navigate('/management');
-        } else {
-            alert('Invalid username or password');
+
+        try {
+            const response = await axios.get('http://localhost:5050/users', {
+                params: {
+                    username,
+                    password
+                }
+            });
+
+            const user = response.data.find((user: { username: string; password: string }) => 
+                user.username === username && user.password === password
+            );
+
+            if (user) {
+                handleUserLogin();
+                navigate('/management');
+            } else {
+                alert('Invalid username or password');
+            }
+        } catch (error) {
+            console.error('There was an error logging in!', error);
+            alert('An error occurred during login');
         }
     };
 

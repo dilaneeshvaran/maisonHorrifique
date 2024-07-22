@@ -1,0 +1,78 @@
+{
+  "reservations": [
+    {
+      "id": "1",
+      "sessionId": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "date": "2023-08-01",
+      "time": "10:00"
+    },
+    {
+      "id": "2",
+      "sessionId": 2,
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "date": "2023-08-02",
+      "time": "14:00"
+    },
+    {
+      "id": "78b9",
+      "sessionId": 2,
+      "name": null,
+      "email": null,
+      "date": null,
+      "time": null
+    },
+    {
+      "id": "635b",
+      "sessionId": 2,
+      "name": "Thamila",
+      "email": "tachat@myges.fr",
+      "date": "2024-08-01",
+      "time": "16:01"
+    },
+    {
+      "id": "88e8",
+      "sessionId": 2,
+      "name": "Thamila",
+      "email": "tachat@myges.fr",
+      "date": "2024-07-22",
+      "time": "15:46"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "274b",
+      "title": "titre)test",
+      "description": "test server json ",
+      "duration": "50",
+      "capacity": "60",
+      "price": "15",
+      "schedules": "2024-08-10T14:10",
+      "image": "blob:http://localhost:5173/c6370e04-46bf-4be5-a526-77e6f2bf1db7"
+    },
+    {
+      "id": "b49a",
+      "title": "test1",
+      "description": "test_02",
+      "duration": "30",
+      "capacity": "10",
+      "price": "20",
+      "schedules": "2024-08-10T15:43",
+      "image": "blob:http://localhost:5173/3171e246-01a3-47aa-ae41-b88365e43236"
+    }
+  ]
+}
